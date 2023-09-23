@@ -177,7 +177,8 @@ section li p {
 	opacity: 0.5;
 }
 button {
-	background-color: var(--dark-gray-blue);
+	backface-visibility: hidden;
+	background: var(--dark-gray-blue);
 	border: none;
 	outline: none;
 	width: 100%;
@@ -186,6 +187,19 @@ button {
 	font-family: 'Hanken Grotesk';
 	padding: 1em 0;
 	border-radius: 3em;
+}
+button:hover {
+	cursor: pointer;
+	background: rgb(120, 87, 255);
+	background: linear-gradient(
+		180deg,
+		rgba(120, 87, 255, 1) -30%,
+		rgba(46, 43, 233, 1) 100%
+	);
+}
+button:focus {
+	opacity: 0.7;
+	outline: 3px solid black;
 }
 .attribution {
 	font-size: 11px;
@@ -199,6 +213,7 @@ button {
 	main {
 		flex-direction: column;
 		width: 100vw;
+		margin: 0;
 	}
 	header {
 		border-radius: 0 0 2em 2em;
